@@ -4,6 +4,14 @@
 
 ### A curated, ranked comparison of IDEs and orchestrators built for the AI coding agent era.
 
+<p>
+  <a href="README.md">English</a> ·
+  <a href="README.ko.md">한국어</a> ·
+  <a href="README.ja.md">日本語</a> ·
+  <a href="README.zh-CN.md">简体中文</a> ·
+  <a href="README.es.md">Español</a>
+</p>
+
 [![GitHub stars](https://img.shields.io/github/stars/pinion05/awesome-agent-ide?style=for-the-badge&logo=github)](https://github.com/pinion05/awesome-agent-ide)
 [![License](https://img.shields.io/badge/CC0-1.0-blue?style=for-the-badge)](LICENSE)
 [![Last Updated](https://img.shields.io/badge/Updated-2026--07-lightgrey?style=for-the-badge)](#)
