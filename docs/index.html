@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚀 Awesome Agent-Native IDE — 2026 Ranked Comparison</title>
+<meta name="description" content="A curated, ranked comparison of IDEs and orchestrators built for the AI coding agent era. Orca, Emdash, Superset, cmux, Claude Squad, and more.">
+<style>
+:root {
+  --bg: #0d1117;
+  --bg-card: #161b22;
+  --bg-hover: #1c2128;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-muted: #8b949e;
+  --accent: #58a6ff;
+  --accent2: #3fb950;
+  --gold: #d29922;
+  --silver: #afb8c1;
+  --bronze: #cd7f32;
+  --red: #f85149;
+  --radius: 12px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 80px 24px 60px;
+  background: linear-gradient(180deg, #0d1117 0%, #161b22 100%);
+  border-bottom: 1px solid var(--border);
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #58a6ff, #3fb950, #d29922);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero .subtitle { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 32px; }
+.hero-badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 500;
+  border: 1px solid var(--border); background: var(--bg-card);
+}
+.badge.green { border-color: var(--accent2); color: var(--accent2); }
+.badge.blue { border-color: var(--accent); color: var(--accent); }
+
+/* Section */
+section { padding: 64px 0; border-bottom: 1px solid var(--border); }
+section h2 {
+  font-size: 2rem; margin-bottom: 32px; display: flex; align-items: center; gap: 12px;
+}
+section h3 { font-size: 1.3rem; margin: 24px 0 12px; }
+
+/* What is */
+.info-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;
+}
+.info-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 24px; transition: border-color 0.2s;
+}
+.info-card:hover { border-color: var(--accent); }
+.info-card .icon { font-size: 2rem; margin-bottom: 12px; }
+.info-card h4 { font-size: 1.05rem; margin-bottom: 8px; }
+.info-card p { font-size: 0.9rem; color: var(--text-muted); }
+
+/* Ranking table */
+.rank-table { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); }
+th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; }
+tr:hover { background: var(--bg-hover); }
+.rank-badge { font-size: 1.5rem; }
+.medal-gold { color: var(--gold); }
+.medal-silver { color: var(--silver); }
+.medal-bronze { color: var(--bronze); }
+.score-pill {
+  display: inline-block; padding: 4px 12px; border-radius: 20px;
+  font-weight: 700; font-size: 0.85rem;
+}
+.score-high { background: rgba(63,185,80,0.15); color: var(--accent2); }
+.score-mid { background: rgba(210,153,34,0.15); color: var(--gold); }
+.score-low { background: rgba(248,81,73,0.15); color: var(--red); }
+.platform-icons { font-size: 1.1rem; white-space: nowrap; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Tool cards */
+.tool-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+  margin-bottom: 24px; overflow: hidden; transition: border-color 0.2s;
+}
+.tool-card:hover { border-color: var(--accent); }
+.tool-header {
+  padding: 24px 28px; display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px; border-bottom: 1px solid var(--border);
+}
+.tool-title { display: flex; align-items: center; gap: 12px; }
+.tool-title h3 { margin: 0; font-size: 1.5rem; }
+.tool-meta { display: flex; gap: 8px; flex-wrap: wrap; }
+.tag {
+  padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 500;
+  border: 1px solid var(--border);
+}
+.tag.license { color: var(--accent2); }
+.tag.platform { color: var(--accent); }
+.tool-body { padding: 24px 28px; }
+.tool-stats {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 20px;
+}
+.stat-box {
+  background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px;
+}
+.stat-box .label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.stat-box .value { font-size: 1.1rem; font-weight: 600; margin-top: 4px; }
+.pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 768px) { .pros-cons { grid-template-columns: 1fr; } }
+.pros-cons h4 { font-size: 0.95rem; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+.pros h4 { color: var(--accent2); }
+.cons h4 { color: var(--red); }
+.pros-cons ul { list-style: none; padding: 0; }
+.pros-cons li { font-size: 0.875rem; padding: 4px 0; color: var(--text-muted); }
+.pros-cons li::before { margin-right: 8px; }
+.pros li::before { content: '✅'; }
+.cons li::before { content: '❌'; }
+.best-for {
+  margin-top: 16px; padding: 12px 16px; background: rgba(88,166,255,0.08);
+  border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; font-size: 0.875rem;
+}
+.best-for strong { color: var(--accent); }
+
+/* Score chart */
+.score-table { overflow-x: auto; }
+.score-table table { font-size: 0.82rem; }
+.score-table th { white-space: nowrap; }
+.score-cell {
+  display: inline-block; width: 32px; height: 32px; line-height: 32px; text-align: center;
+  border-radius: 6px; font-weight: 600; font-size: 0.85rem;
+}
+.cell-9-10 { background: rgba(63,185,80,0.2); color: var(--accent2); }
+.cell-7-8 { background: rgba(88,166,255,0.15); color: var(--accent); }
+.cell-5-6 { background: rgba(210,153,34,0.15); color: var(--gold); }
+.cell-1-4 { background: rgba(248,81,73,0.15); color: var(--red); }
+
+/* Feature matrix */
+.matrix-table { overflow-x: auto; }
+.matrix-table table { font-size: 0.85rem; }
+.matrix-table td { text-align: center; }
+.matrix-table td:first-child { text-align: left; font-weight: 500; }
+.yes { color: var(--accent2); font-size: 1.1rem; }
+.no { color: var(--red); font-size: 1.1rem; }
+.partial { color: var(--gold); font-size: 1.1rem; }
+
+/* Decision guide */
+.decision-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+.decision-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 20px 24px; transition: border-color 0.2s;
+}
+.decision-card:hover { border-color: var(--accent); }
+.decision-card .situation { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px; }
+.decision-card .recommendation {
+  font-size: 1.05rem; font-weight: 600; color: var(--accent); margin-bottom: 6px;
+}
+.decision-card .reason { font-size: 0.82rem; color: var(--text-muted); }
+
+/* Observations */
+.obs-list { list-style: none; padding: 0; counter-reset: obs; }
+.obs-list li {
+  padding: 14px 0 14px 48px; position: relative; border-bottom: 1px solid var(--border);
+  font-size: 0.95rem; counter-increment: obs;
+}
+.obs-list li::before {
+  content: counter(obs); position: absolute; left: 0; top: 14px;
+  width: 32px; height: 32px; line-height: 32px; text-align: center;
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 50%;
+  font-weight: 700; font-size: 0.85rem; color: var(--accent);
+}
+
+/* Footer */
+footer { padding: 48px 24px; text-align: center; color: var(--text-muted); font-size: 0.875rem; }
+footer a { color: var(--accent); }
+
+/* Nav */
+nav {
+  position: sticky; top: 0; z-index: 100; background: rgba(13,17,23,0.85);
+  backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);
+  padding: 12px 0;
+}
+nav .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+nav .logo { font-weight: 700; font-size: 1.1rem; }
+nav ul { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+nav a { color: var(--text-muted); font-size: 0.875rem; }
+nav a:hover { color: var(--accent); text-decoration: none; }
+@media (max-width: 640px) { nav ul { display: none; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">🚀 Awesome Agent-Native IDE</div>
+    <ul>
+      <li><a href="#what">개요</a></li>
+      <li><a href="#ranking">순위</a></li>
+      <li><a href="#scores">평가</a></li>
+      <li><a href="#tools">상세 분석</a></li>
+      <li><a href="#matrix">기능 비교</a></li>
+      <li><a href="#guide">추천 가이드</a></li>
+      <li><a href="#observations">시장 관찰</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>🚀 Awesome Agent-Native IDE</h1>
+  <p class="subtitle">AI 코딩 에이전트 시대를 위해 태어난 IDE & 오케스트레이터 종합 비교</p>
+  <div class="hero-badges">
+    <span class="badge green">📊 10개 도구 분석</span>
+    <span class="badge blue">🗓️ 2026년 7월 기준</span>
+    <span class="badge">⭐ GitHub에서 보기</span>
+  </div>
+</div>
+
+<section id="what">
+  <div class="container">
+    <h2>📖 Agent-Native IDE란?</h2>
+    <p style="color:var(--text-muted);max-width:800px;margin-bottom:32px;">
+      전통적 IDE(Cursor, Windsurf, VS Code)가 AI 기능을 기존 에디터에 "붙이는" 접근이라면,
+      <strong>Agent-Native IDE</strong>는 여러 CLI 코딩 에이전트(Claude Code, Codex, Gemini CLI 등)를
+      <strong>병렬로 실행·관리·리뷰하기 위해 처음부터 설계된</strong> 환경입니다.
+    </p>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="icon">🌳</div>
+        <h4>Git Worktree 격리</h4>
+        <p>각 에이전트마다 독립된 브랜치와 작업 디렉토리. 하나의 .git 데이터베이스를 공유하며 충돌 없이 병렬 실행.</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">⚡</div>
+        <h4>멀티 에이전트 동시 실행</h4>
+        <p>한 화면에서 5~20개 이상의 에이전트를 모니터링. 각각 다른 태스크를 동시에 수행.</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">🔍</div>
+        <h4>Diff 리뷰 + 머지</h4>
+        <p>에이전트가 만든 변경사항을 한 곳에서 검토하고 머지. 인라인 코멘트로 피드백 전송.</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">🔌</div>
+        <h4>BYOA (Bring Your Own Agent)</h4>
+        <p>자기 구독으로 어떤 CLI 에이전트든 실행. 벤더 종속 없음.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ranking">
+  <div class="container">
+    <h2>🏆 종합 순위</h2>
+    <div class="rank-table">
+      <table>
+        <thead>
+          <tr>
+            <th>순위</th>
+            <th>도구</th>
+            <th>점수</th>
+            <th>플랫폼</th>
+            <th>라이선스</th>
+            <th>Stars</th>
+            <th>한줄평</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="rank-badge medal-gold">🥇</span></td>
+            <td><a href="https://github.com/stablyai/orca"><strong>Orca</strong></a></td>
+            <td><span class="score-pill score-high">8.6</span></td>
+            <td class="platform-icons">🍎 🪟 🐧 📱</td>
+            <td><span class="tag license">MIT</span></td>
+            <td>18.3K</td>
+            <td>풀 크로스플랫폼 + 모바일, Design Mode, 일일 릴리스</td>
+          </tr>
+          <tr>
+            <td><span class="rank-badge medal-silver">🥈</span></td>
+            <td><a href="https://github.com/generalaction/emdash"><strong>Emdash</strong></a></td>
+            <td><span class="score-pill score-high">8.3</span></td>
+            <td class="platform-icons">🍎 🪟 🐧</td>
+            <td><span class="tag license">Apache-2.0</span></td>
+            <td>5.1K</td>
+            <td>포트 주입, 8개 티켓 통합, 28+ 에이전트</td>
+          </tr>
+          <tr>
+            <td><span class="rank-badge medal-bronze">🥉</span></td>
+            <td><a href="https://github.com/superset-sh/superset"><strong>Superset</strong></a></td>
+            <td><span class="score-pill score-high">7.5</span></td>
+            <td class="platform-icons">🍎</td>
+            <td><span class="tag">Other</span></td>
+            <td>12.4K</td>
+            <td>CLI + SDK + MCP, 자동화, 최다 에이전트 지원</td>
+          </tr>
+          <tr>
+            <td><span class="rank-badge">4</span></td>
+            <td><a href="https://github.com/manaflow-ai/cmux"><strong>cmux</strong></a></td>
+            <td><span class="score-pill score-mid">7.0</span></td>
+            <td class="platform-icons">🍎</td>
+            <td><span class="tag license">GPL</span></td>
+            <td>24.4K</td>
+            <td>네이티브 Swift 성능, 최대 커뮤니티, 터미널 퍼스트</td>
+          </tr>
+          <tr>
+            <td><span class="rank-badge">5</span></td>
+            <td><a href="https://github.com/johannesjo/parallel-code"><strong>Parallel Code</strong></a></td>
+            <td><span class="score-pill score-mid">6.7</span></td>
+            <td class="platform-icons">🍎 🐧</td>
+            <td><span class="tag license">MIT</span></td>
+            <td>0.8K</td>
+            <td>Docker 샌드박싱, AI Arena, 커버리지 레이더</td>
+          </tr>
+          <tr>
+            <td><span class="rank-badge">6</span></td>
+            <td><a href="https://github.com/smtg-ai/claude-squad"><strong>Claude Squad</strong></a></td>
+            <td><span class="score-pill score-mid">6.5</span></td>
+            <td class="platform-icons">🍎 🐧</td>
+            <td><span class="tag">AGPL-3.0</span></td>
+            <td>8.1K</td>
+            <td>최고 안정성 (0.6%), 최단 설정</td>
+          </tr>
+          <tr>
+            <td><span class="rank-badge">7</span></td>
+            <td><a href="https://github.com/BloopAI/vibe-kanban"><strong>Vibe Kanban</strong></a></td>
+            <td><span class="score-pill score-mid">6.3</span></td>
+            <td class="platform-icons">🌐</td>
+            <td><span class="tag license">Apache-2.0</span></td>
+            <td>—</td>
+            <td>칸반 + MCP 자동 분해 (커뮤니티 유지보수)</td>
+          </tr>
+          <tr>
+            <td><span class="rank-badge">8</span></td>
+            <td><a href="https://nimbalyst.com/"><strong>Nimbalyst</strong></a></td>
+            <td><span class="score-pill score-mid">6.2</span></td>
+            <td class="platform-icons">🍎 🪟 🐧 📱</td>
+            <td><span class="tag">—</span></td>
+            <td>—</td>
+            <td>Worktree 일급 시민, 시각 편집, iOS 동반 앱</td>
+          </tr>
+          <tr>
+            <td><span class="rank-badge">9</span></td>
+            <td><a href="https://www.intentapp.dev/"><strong>Intent</strong></a></td>
+            <td><span class="score-pill score-low">6.1</span></td>
+            <td class="platform-icons">🍎</td>
+            <td><span class="tag">Closed</span></td>
+            <td>—</td>
+            <td>스펙 기반 조정, Coordinator/Verifier 에이전트</td>
+          </tr>
+          <tr>
+            <td><span class="rank-badge">10</span></td>
+            <td><a href="https://www.conductor.build/"><strong>Conductor</strong></a></td>
+            <td><span class="score-pill score-low">5.7</span></td>
+            <td class="platform-icons">🍎</td>
+            <td><span class="tag">Closed</span></td>
+            <td>—</td>
+            <td>Mac 최고 폴리싱, 무료, BYO 로그인</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="scores">
+  <div class="container">
+    <h2>📊 다차원 평가</h2>
+    <p style="color:var(--text-muted);margin-bottom:24px;">각 도구를 7개 지표로 평가 (10점 만점), 가중치를 적용해 종합 점수 산출.</p>
+    <div class="score-table">
+      <table>
+        <thead>
+          <tr>
+            <th>도구</th>
+            <th>기술력<br><small>(20%)</small></th>
+            <th>안정성<br><small>(15%)</small></th>
+            <th>편의성<br><small>(15%)</small></th>
+            <th>생태계<br><small>(15%)</small></th>
+            <th>확장성<br><small>(15%)</small></th>
+            <th>플랫폼<br><small>(10%)</small></th>
+            <th>오픈소스<br><small>(10%)</small></th>
+            <th>종합</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Orca</strong></td><td><span class="score-cell cell-9-10">9</span></td><td><span class="score-cell cell-7-8">7</span></td><td><span class="score-cell cell-9-10">9</span></td><td><span class="score-cell cell-7-8">8</span></td><td><span class="score-cell cell-9-10">9</span></td><td><span class="score-cell cell-9-10">10</span></td><td><span class="score-cell cell-7-8">8</span></td><td><span class="score-pill score-high">8.6</span></td></tr>
+          <tr><td><strong>Emdash</strong></td><td><span class="score-cell cell-7-8">8</span></td><td><span class="score-cell cell-7-8">7</span></td><td><span class="score-cell cell-7-8">8</span></td><td><span class="score-cell cell-9-10">9</span></td><td><span class="score-cell cell-7-8">8</span></td><td><span class="score-cell cell-9-10">10</span></td><td><span class="score-cell cell-9-10">9</span></td><td><span class="score-pill score-high">8.3</span></td></tr>
+          <tr><td><strong>Superset</strong></td><td><span class="score-cell cell-7-8">8</span></td><td><span class="score-cell cell-7-8">8</span></td><td><span class="score-cell cell-7-8">8</span></td><td><span class="score-cell cell-9-10">9</span></td><td><span class="score-cell cell-7-8">8</span></td><td><span class="score-cell cell-1-4">3</span></td><td><span class="score-cell cell-5-6">6</span></td><td><span class="score-pill score-high">7.5</span></td></tr>
+          <tr><td><strong>cmux</strong></td><td><span class="score-cell cell-7-8">8</span></td><td><span class="score-cell cell-5-6">6</span></td><td><span class="score-cell cell-7-8">8</span></td><td><span class="score-cell cell-7-8">8</span></td><td><span class="score-cell cell-7-8">7</span></td><td><span class="score-cell cell-1-4">3</span></td><td><span class="score-cell cell-7-8">7</span></td><td><span class="score-pill score-mid">7.0</span></td></tr>
+          <tr><td><strong>Parallel Code</strong></td><td><span class="score-cell cell-7-8">7</span></td><td><span class="score-cell cell-7-8">7</span></td><td><span class="score-cell cell-7-8">7</span></td><td><span class="score-cell cell-5-6">6</span></td><td><span class="score-cell cell-5-6">6</span></td><td><span class="score-cell cell-5-6">6</span></td><td><span class="score-cell cell-7-8">8</span></td><td><span class="score-pill score-mid">6.7</span></td></tr>
+          <tr><td><strong>Claude Squad</strong></td><td><span class="score-cell cell-5-6">6</span></td><td><span class="score-cell cell-9-10">9</span></td><td><span class="score-cell cell-5-6">6</span></td><td><span class="score-cell cell-7-8">7</span></td><td><span class="score-cell cell-5-6">5</span></td><td><span class="score-cell cell-5-6">6</span></td><td><span class="score-cell cell-5-6">6</span></td><td><span class="score-pill score-mid">6.5</span></td></tr>
+          <tr><td><strong>Vibe Kanban</strong></td><td><span class="score-cell cell-7-8">7</span></td><td><span class="score-cell cell-1-4">4</span></td><td><span class="score-cell cell-7-8">7</span></td><td><span class="score-cell cell-7-8">7</span></td><td><span class="score-cell cell-5-6">5</span></td><td><span class="score-cell cell-7-8">8</span></td><td><span class="score-cell cell-5-6">6</span></td><td><span class="score-pill score-mid">6.3</span></td></tr>
+          <tr><td><strong>Nimbalyst</strong></td><td><span class="score-cell cell-7-8">7</span></td><td><span class="score-cell cell-5-6">5</span></td><td><span class="score-cell cell-7-8">7</span></td><td><span class="score-cell cell-5-6">5</span></td><td><span class="score-cell cell-5-6">6</span></td><td><span class="score-cell cell-7-8">8</span></td><td><span class="score-cell cell-5-6">5</span></td><td><span class="score-pill score-mid">6.2</span></td></tr>
+          <tr><td><strong>Intent</strong></td><td><span class="score-cell cell-9-10">9</span></td><td><span class="score-cell cell-5-6">5</span></td><td><span class="score-cell cell-7-8">7</span></td><td><span class="score-cell cell-5-6">6</span></td><td><span class="score-cell cell-7-8">7</span></td><td><span class="score-cell cell-1-4">3</span></td><td><span class="score-cell cell-1-4">2</span></td><td><span class="score-pill score-low">6.1</span></td></tr>
+          <tr><td><strong>Conductor</strong></td><td><span class="score-cell cell-7-8">7</span></td><td><span class="score-cell cell-7-8">7</span></td><td><span class="score-cell cell-7-8">8</span></td><td><span class="score-cell cell-5-6">5</span></td><td><span class="score-cell cell-5-6">5</span></td><td><span class="score-cell cell-1-4">3</span></td><td><span class="score-cell cell-1-4">2</span></td><td><span class="score-pill score-low">5.7</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="margin-top:24px;display:flex;gap:16px;flex-wrap:wrap;font-size:0.8rem;color:var(--text-muted);">
+      <span><span class="score-cell cell-9-10" style="font-size:0.7rem;width:20px;height:20px;line-height:20px;">9</span> 9–10 우수</span>
+      <span><span class="score-cell cell-7-8" style="font-size:0.7rem;width:20px;height:20px;line-height:20px;">8</span> 7–8 양호</span>
+      <span><span class="score-cell cell-5-6" style="font-size:0.7rem;width:20px;height:20px;line-height:20px;">6</span> 5–6 보통</span>
+      <span><span class="score-cell cell-1-4" style="font-size:0.7rem;width:20px;height:20px;line-height:20px;">3</span> 1–4 미흡</span>
+    </div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="container">
+    <h2>🔍 도구별 상세 분석</h2>
+
+    <!-- Orca -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <div class="tool-title"><span style="font-size:2rem;">🥇</span><h3><a href="https://github.com/stablyai/orca">Orca</a></h3></div>
+        <div class="tool-meta">
+          <span class="tag license">MIT</span>
+          <span class="tag platform">macOS · Win · Linux · 📱</span>
+          <span class="tag">⭐ 18.3K</span>
+        </div>
+      </div>
+      <div class="tool-body">
+        <div class="tool-stats">
+          <div class="stat-box"><div class="label">Stars</div><div class="value">18,327</div></div>
+          <div class="stat-box"><div class="label">Issues</div><div class="value">1,361 (7.4%)</div></div>
+          <div class="stat-box"><div class="label">Language</div><div class="value">TypeScript</div></div>
+          <div class="stat-box"><div class="label">종합 점수</div><div class="value" style="color:var(--accent2)">8.6 / 10</div></div>
+        </div>
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>장점</h4>
+            <ul>
+              <li>유일한 풀 크로스플랫폼 + 모바일 (iOS/Android 동반 앱)</li>
+              <li>Design Mode — Chromium에서 UI 요소 클릭 시 HTML/CSS/스크린샷을 에이전트 프롬프트로 직송</li>
+              <li>SSH Worktrees — 원격 머신에서 에이전트 실행, 자동 재연결 + 포트 포워딩</li>
+              <li>Computer Use — 에이전트가 데스크톱 앱과 실제 UI 조작</li>
+              <li>GitHub & Linear 네이티브 — PR/이슈/보드 앱 내 브라우징</li>
+              <li>Annotate AI Diffs — diff 라인에 코멘트 → 에이전트에게 피드백</li>
+              <li>일일 릴리스 — 매일 기능 출시</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>단점</h4>
+            <ul>
+              <li>Electron 기반 — 네이티브 대비 메모리/시작 속도 열세</li>
+              <li>1,361개 미해결 이슈 — 관리 부담</li>
+              <li>MIT이지만 stablyai 단일 주도 — 벤더 의존도</li>
+            </ul>
+          </div>
+        </div>
+        <div class="best-for"><strong>추천:</strong> 분산 팀, 모바일 모니터링 필요, 크로스플랫폼 + 최강 기능 세트가 필요한 경우</div>
+      </div>
+    </div>
+
+    <!-- Emdash -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <div class="tool-title"><span style="font-size:2rem;">🥈</span><h3><a href="https://github.com/generalaction/emdash">Emdash</a></h3></div>
+        <div class="tool-meta">
+          <span class="tag license">Apache-2.0</span>
+          <span class="tag platform">macOS · Win · Linux</span>
+          <span class="tag">YC W26</span>
+          <span class="tag">⭐ 5.1K</span>
+        </div>
+      </div>
+      <div class="tool-body">
+        <div class="tool-stats">
+          <div class="stat-box"><div class="label">Stars</div><div class="value">5,149</div></div>
+          <div class="stat-box"><div class="label">Issues</div><div class="value">132 (2.6%)</div></div>
+          <div class="stat-box"><div class="label">Language</div><div class="value">TypeScript</div></div>
+          <div class="stat-box"><div class="label">종합 점수</div><div class="value" style="color:var(--accent2)">8.3 / 10</div></div>
+        </div>
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>장점</h4>
+            <ul>
+              <li>가장 넓은 티켓 통합 — Linear, GitHub, Jira, GitLab, Asana, Monday.com, Forgejo, Plain (8개)</li>
+              <li>$EMDASH_PORT 주입 — 포트 충돌 문제를 설정 레벨에서 해결</li>
+              <li>28+ CLI 에이전트 자동 감지 (Claude Code, Codex, Cursor, Devin 등)</li>
+              <li>SSH/SFTP 원격 프로젝트 — 원격 코드베이스에서 동일한 병렬 워크플로우</li>
+              <li>Local-first + 프라이버시 — SQLite 로컬 저장, 서버 전송 없음</li>
+              <li>크로스플랫폼 + Apache-2.0 — 가장 관대한 조합</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>단점</h4>
+            <ul>
+              <li>모바일 동반 앱 없음</li>
+              <li>에이전트 간 조정(협업) 불가 — 각자 독립 실행</li>
+              <li>2026년 초 출시 — 커뮤니티 성장 단계</li>
+            </ul>
+          </div>
+        </div>
+        <div class="best-for"><strong>추천:</strong> 엔터프라이즈 팀, 다수 티켓 시스템 통합, 포트 격리, 프라이버시 보장이 필요한 경우</div>
+      </div>
+    </div>
+
+    <!-- Superset -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <div class="tool-title"><span style="font-size:2rem;">🥉</span><h3><a href="https://github.com/superset-sh/superset">Superset</a></h3></div>
+        <div class="tool-meta">
+          <span class="tag">Other</span>
+          <span class="tag platform">macOS</span>
+          <span class="tag">YC</span>
+          <span class="tag">⭐ 12.4K</span>
+        </div>
+      </div>
+      <div class="tool-body">
+        <div class="tool-stats">
+          <div class="stat-box"><div class="label">Stars</div><div class="value">12,399</div></div>
+          <div class="stat-box"><div class="label">Issues</div><div class="value">323 (2.6%)</div></div>
+          <div class="stat-box"><div class="label">Language</div><div class="value">TypeScript</div></div>
+          <div class="stat-box"><div class="label">종합 점수</div><div class="value" style="color:var(--accent2)">7.5 / 10</div></div>
+        </div>
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>장점</h4>
+            <ul>
+              <li>가장 다양한 접근면 — 데스크톱 + CLI + TypeScript SDK + MCP 서버</li>
+              <li>가장 넓은 에이전트 지원 — 12+ 사전 설정 + 커스텀 에이전트</li>
+              <li>Automations — 스케줄 기반 에이전트 세션 실행</li>
+              <li>Slack & Linear 통합 — 메시지/이슈에서 워크스페이스 생성</li>
+              <li>인앱 브라우저 + 포트 감지 — 워크스페이스별 dev 서버 미리보기</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>단점</h4>
+            <ul>
+              <li>macOS 전용 — Windows/Linux 빌드 없음 (치명적)</li>
+              <li>Bun, Caddy 등 외부 의존성 필요</li>
+              <li>"Other" 라이선스 — 오픈소스 자유도 불투명</li>
+              <li>iOS 앱 아직 "출시 예정"</li>
+            </ul>
+          </div>
+        </div>
+        <div class="best-for"><strong>추천:</strong> macOS 개발자, 최대 프로그래밍 가능성(CLI+SDK+MCP)과 최다 에이전트 생태계가 필요한 경우</div>
+      </div>
+    </div>
+
+    <!-- cmux -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <div class="tool-title"><span style="font-size:2rem;">4</span><h3><a href="https://github.com/manaflow-ai/cmux">cmux</a></h3></div>
+        <div class="tool-meta">
+          <span class="tag license">GPL</span>
+          <span class="tag platform">macOS</span>
+          <span class="tag">⭐ 24.4K</span>
+        </div>
+      </div>
+      <div class="tool-body">
+        <div class="tool-stats">
+          <div class="stat-box"><div class="label">Stars</div><div class="value">24,412</div></div>
+          <div class="stat-box"><div class="label">Issues</div><div class="value">3,446 (14.1%)</div></div>
+          <div class="stat-box"><div class="label">Language</div><div class="value">Swift (native)</div></div>
+          <div class="stat-box"><div class="label">종합 점수</div><div class="value" style="color:var(--gold)">7.0 / 10</div></div>
+        </div>
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>장점</h4>
+            <ul>
+              <li>GitHub 스타 수 최다 (24.4K) — 최대 커뮤니티</li>
+              <li>네이티브 성능 — Swift/AppKit + libghostty GPU 렌더링</li>
+              <li>명확한 철학 — "원시 도구지 솔루션이 아니다"</li>
+              <li>알림 시스템 — OSC 시퀀스 감지, 파란 링 + 탭 점등</li>
+              <li>인앱 브라우저 — agent-browser API 포팅</li>
+              <li>SSH + Claude Code Teams — tmux 불필요</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>단점</h4>
+            <ul>
+              <li>macOS 전용 — 플랫폼 점수 최하위</li>
+              <li>터미널이지 IDE가 아님 — worktree 관리, diff 뷰어 없음</li>
+              <li>이슈 3,446개 (14.1%) — 비율 최고</li>
+              <li>모바일 없음</li>
+            </ul>
+          </div>
+        </div>
+        <div class="best-for"><strong>추천:</strong> macOS 파워 유저, 네이티브 성능 + 터미널 퍼스트 접근. diff 리뷰는 Orca/Emdash와 조합.</div>
+      </div>
+    </div>
+
+    <!-- Parallel Code -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <div class="tool-title"><span style="font-size:2rem;">5</span><h3><a href="https://github.com/johannesjo/parallel-code">Parallel Code</a></h3></div>
+        <div class="tool-meta">
+          <span class="tag license">MIT</span>
+          <span class="tag platform">macOS · Linux</span>
+          <span class="tag">⭐ 0.8K</span>
+        </div>
+      </div>
+      <div class="tool-body">
+        <div class="tool-stats">
+          <div class="stat-box"><div class="label">Stars</div><div class="value">838</div></div>
+          <div class="stat-box"><div class="label">Issues</div><div class="value">39 (4.7%)</div></div>
+          <div class="stat-box"><div class="label">Language</div><div class="value">TypeScript</div></div>
+          <div class="stat-box"><div class="label">종합 점수</div><div class="value" style="color:var(--gold)">6.7 / 10</div></div>
+        </div>
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>장점</h4>
+            <ul>
+              <li>Docker 샌드박싱 — 프로젝트별 Dockerfile로 완전 격리</li>
+              <li>AI Arena — 에이전트 간 헤드투헤드 경쟁, 승자 머지</li>
+              <li>커버리지 레이더 — 변경 파일별 테스트 커버리지 배지</li>
+              <li>Steps 추적 패널 — 에이전트 진행 타임라인</li>
+              <li>모바일 모니터링 (QR 코드 → Wi-Fi/Tailscale)</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>단점</h4>
+            <ul>
+              <li>커뮤니티 최소 (838★) — 유지보수 불확실</li>
+              <li>Windows 미지원</li>
+              <li>SSH/원격 워크트리 없음</li>
+              <li>단일 개발자 프로젝트</li>
+            </ul>
+          </div>
+        </div>
+        <div class="best-for"><strong>추천:</strong> Docker 격리 실험, 에이전트 간 경쟁 테스트가 필요한 개발자</div>
+      </div>
+    </div>
+
+    <!-- Claude Squad -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <div class="tool-title"><span style="font-size:2rem;">6</span><h3><a href="https://github.com/smtg-ai/claude-squad">Claude Squad</a></h3></div>
+        <div class="tool-meta">
+          <span class="tag">AGPL-3.0</span>
+          <span class="tag platform">macOS · Linux</span>
+          <span class="tag">⭐ 8.1K</span>
+        </div>
+      </div>
+      <div class="tool-body">
+        <div class="tool-stats">
+          <div class="stat-box"><div class="label">Stars</div><div class="value">8,108</div></div>
+          <div class="stat-box"><div class="label">Issues</div><div class="value">52 (0.6%)</div></div>
+          <div class="stat-box"><div class="label">Language</div><div class="value">Go (TUI)</div></div>
+          <div class="stat-box"><div class="label">종합 점수</div><div class="value" style="color:var(--gold)">6.5 / 10</div></div>
+        </div>
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>장점</h4>
+            <ul>
+              <li>압도적 안정성 — 이슈/스타 비율 0.6%, Go 바이너리</li>
+              <li>가장 빠른 설정 — brew install → 5초 내 6개 세션</li>
+              <li>키보드 퍼스트 TUI — vim 스타일 네비게이션</li>
+              <li>Claude Code, Codex, Aider, Gemini, OpenCode, Amp 지원</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>단점</h4>
+            <ul>
+              <li>시각적 diff 리뷰 약함 — 별도 도구 필요</li>
+              <li>원격/SSH/모바일 전무</li>
+              <li>AGPL-3.0 — 상업적 임베딩 시 법무 검토</li>
+              <li>Windows 미지원 (tmux 의존)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="best-for"><strong>추천:</strong> 터미널 파워 유저의 최단 경로. macOS/Linux 솔로 개발자.</div>
+      </div>
+    </div>
+
+    <!-- Vibe Kanban -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <div class="tool-title"><span style="font-size:2rem;">7</span><h3><a href="https://github.com/BloopAI/vibe-kanban">Vibe Kanban</a></h3></div>
+        <div class="tool-meta">
+          <span class="tag license">Apache-2.0</span>
+          <span class="tag platform">Web</span>
+          <span class="tag">커뮤니티 유지보수</span>
+        </div>
+      </div>
+      <div class="tool-body">
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>장점</h4>
+            <ul>
+              <li>칸반 카드 = worktree = 에이전트 — 직관적 메타포</li>
+              <li>MCP 서버로 카드 자동 분해 (자율적 태스크 분해에 가장 근접)</li>
+              <li>10+ 에이전트, 인앱 브라우저(디바이스 에뮬레이션)</li>
+              <li>셀프 호스팅 가능, 팀 친화적</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>단점</h4>
+            <ul>
+              <li>Bloop 서비스 종료 — 클라우드 기능 중단</li>
+              <li>하드 태스크 의존성 미지원</li>
+              <li>워크트리 20개 시 디스크 부담</li>
+              <li>미래 유지보수가 커뮤니티 기여에 전적 의존</li>
+            </ul>
+          </div>
+        </div>
+        <div class="best-for"><strong>추천:</strong> 공유 시각 보드 + MCP 자동 분해가 필요하고 커뮤니티 유지보수에 관대한 팀</div>
+      </div>
+    </div>
+
+    <!-- Nimbalyst -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <div class="tool-title"><span style="font-size:2rem;">8</span><h3><a href="https://nimbalyst.com/">Nimbalyst</a></h3></div>
+        <div class="tool-meta">
+          <span class="tag platform">Cross-platform · 📱</span>
+          <span class="tag">Crystal 후속</span>
+        </div>
+      </div>
+      <div class="tool-body">
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>장점</h4>
+            <ul>
+              <li>worktree가 세션 객체의 일급 시민 — 원클릭 옵션</li>
+              <li>인라인 diff, 시각적 파일 사이드바, GUI 리뷰-머지</li>
+              <li>크로스플랫폼 + iOS 동반 앱</li>
+              <li>마크다운/Excalidraw/목업 시각 편집 내장</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>단점</h4>
+            <ul>
+              <li>가장 어린 프로젝트 (2026.02 리브랜딩)</li>
+              <li>커뮤니티·문서·평판 부족</li>
+              <li>벤더 단일 주도, 라이선스 불투명</li>
+              <li>에이전트 지원 좁음 (Claude Code, Codex)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="best-for"><strong>추천:</strong> 시각적 worktree 관리가 필요한 개발자. 6개월 후 재평가 권장.</div>
+      </div>
+    </div>
+
+    <!-- Intent -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <div class="tool-title"><span style="font-size:2rem;">9</span><h3><a href="https://www.intentapp.dev/">Intent</a></h3></div>
+        <div class="tool-meta">
+          <span class="tag">Closed</span>
+          <span class="tag platform">macOS</span>
+          <span class="tag">Public Beta</span>
+          <span class="tag">Augment Code</span>
+        </div>
+      </div>
+      <div class="tool-body">
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>장점</h4>
+            <ul>
+              <li>스펙 기반 조정 — Living spec이 모든 에이전트의 단일 진실 원천</li>
+              <li>Coordinator → Implementor → Verifier 3단계 분업</li>
+              <li>크로스 서비스 리팩토링에서 진가 — 필드명 변경 등 스펙 전파</li>
+              <li>BYOA (Claude Code, Codex, OpenCode + Auggie)</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>단점</h4>
+            <ul>
+              <li>폐쇄 소스 — 코드 감사 불가, 벤더 종속</li>
+              <li>macOS only (Windows 대기자, Linux 미발표)</li>
+              <li>Augment 크레딧 사용 — 기존 구독과 비용 중복</li>
+              <li>공개 베타 — 프로덕션 안정성 미검증</li>
+            </ul>
+          </div>
+        </div>
+        <div class="best-for"><strong>추천:</strong> 복잡한 크로스 서비스 리팩토링, 스펙 기반 조정이 가치 있는 macOS 팀</div>
+      </div>
+    </div>
+
+    <!-- Conductor -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <div class="tool-title"><span style="font-size:2rem;">10</span><h3><a href="https://www.conductor.build/">Conductor</a></h3></div>
+        <div class="tool-meta">
+          <span class="tag">Closed</span>
+          <span class="tag platform">macOS</span>
+          <span class="tag">Free</span>
+          <span class="tag">Melty Labs</span>
+        </div>
+      </div>
+      <div class="tool-body">
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>장점</h4>
+            <ul>
+              <li>macOS에서 가장 세련된 대시보드 — diff-first 리뷰</li>
+              <li>무료 + BYO Claude/Codex/Cursor/OpenCode 로그인</li>
+              <li>기존 VS Code/JetBrains 옆에 두고 쓰는 오케스트레이터로 최적</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>단점</h4>
+            <ul>
+              <li>폐쇄 소스 — 코드 감사 불가, 벤더 종속</li>
+              <li>macOS only — 크로스플랫폼 "점진적 추가 중"</li>
+              <li>CLI/SDK/MCP 없음 — 프로그래밍 불가</li>
+              <li>원격/SSH/모바일 전무, 에이전트 4종만</li>
+            </ul>
+          </div>
+        </div>
+        <div class="best-for"><strong>추천:</strong> macOS에서 가장 쉬운 진입점. 무료 + BYO 로그인으로 빠르게 시작.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="matrix">
+  <div class="container">
+    <h2>📈 기능 비교 매트릭스</h2>
+    <div class="matrix-table">
+      <table>
+        <thead>
+          <tr>
+            <th>도구</th>
+            <th>Worktree</th>
+            <th>Diff 리뷰</th>
+            <th>Remote/SSH</th>
+            <th>모바일</th>
+            <th>브라우저</th>
+            <th>CLI/SDK/MCP</th>
+            <th>자동화</th>
+            <th>티켓 통합</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Orca</strong></td><td class="yes">✅</td><td class="yes">✅</td><td class="yes">✅</td><td class="yes">📱 iOS+Android</td><td class="yes">✅ Design Mode</td><td class="yes">✅ CLI</td><td class="no">❌</td><td>GitHub·Linear</td></tr>
+          <tr><td><strong>Emdash</strong></td><td class="yes">✅</td><td class="yes">✅</td><td class="yes">✅ SSH/SFTP</td><td class="no">❌</td><td class="no">❌</td><td class="no">❌</td><td class="no">❌</td><td>8 platforms</td></tr>
+          <tr><td><strong>Superset</strong></td><td class="yes">✅</td><td class="yes">✅</td><td class="yes">✅</td><td class="partial">🔄 iOS soon</td><td class="yes">✅</td><td class="yes">✅ CLI+SDK+MCP</td><td class="yes">✅</td><td>Slack·Linear</td></tr>
+          <tr><td><strong>cmux</strong></td><td class="no">❌</td><td class="no">❌</td><td class="yes">✅</td><td class="no">❌</td><td class="yes">✅</td><td class="yes">✅ CLI+Socket</td><td class="no">❌</td><td class="no">❌</td></tr>
+          <tr><td><strong>Parallel Code</strong></td><td class="yes">✅</td><td class="yes">✅</td><td class="no">❌</td><td class="yes">✅ QR</td><td class="no">❌</td><td class="no">❌</td><td class="no">❌</td><td class="no">❌</td></tr>
+          <tr><td><strong>Claude Squad</strong></td><td class="yes">✅</td><td class="partial">⚠️ 약함</td><td class="no">❌</td><td class="no">❌</td><td class="no">❌</td><td class="no">❌</td><td class="no">❌</td><td class="no">❌</td></tr>
+          <tr><td><strong>Vibe Kanban</strong></td><td class="yes">✅</td><td class="yes">✅</td><td class="no">❌</td><td class="no">❌</td><td class="yes">✅</td><td class="yes">✅ MCP</td><td class="no">❌</td><td class="no">❌</td></tr>
+          <tr><td><strong>Nimbalyst</strong></td><td class="yes">✅</td><td class="yes">✅</td><td class="no">❌</td><td class="yes">✅ iOS</td><td class="no">❌</td><td class="no">❌</td><td class="no">❌</td><td class="no">❌</td></tr>
+          <tr><td><strong>Intent</strong></td><td class="yes">✅</td><td class="yes">✅</td><td class="no">❌</td><td class="no">❌</td><td class="yes">✅</td><td class="yes">✅ MCP</td><td class="no">❌</td><td class="no">❌</td></tr>
+          <tr><td><strong>Conductor</strong></td><td class="yes">✅</td><td class="yes">✅</td><td class="no">❌</td><td class="no">❌</td><td class="no">❌</td><td class="no">❌</td><td class="no">❌</td><td class="no">❌</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="guide">
+  <div class="container">
+    <h2>🎯 사용 사례별 추천</h2>
+    <div class="decision-grid">
+      <div class="decision-card">
+        <div class="situation">크로스플랫폼 팀, 모바일 모니터링 필요</div>
+        <div class="recommendation">→ Orca</div>
+        <div class="reason">유일하게 3 OS + iOS/Android 지원</div>
+      </div>
+      <div class="decision-card">
+        <div class="situation">엔터프라이즈, 다수 티켓 시스템 통합</div>
+        <div class="recommendation">→ Emdash</div>
+        <div class="reason">8개 티켓 플랫폼 + 포트 주입 + 프라이버시</div>
+      </div>
+      <div class="decision-card">
+        <div class="situation">macOS + 프로그래밍 가능한 자동화</div>
+        <div class="recommendation">→ Superset</div>
+        <div class="reason">CLI + SDK + MCP 3면 제공, Automations</div>
+      </div>
+      <div class="decision-card">
+        <div class="situation">macOS + 네이티브 성능 + 터미널 퍼스트</div>
+        <div class="recommendation">→ cmux</div>
+        <div class="reason">Swift/AppKit, GPU 렌더링, 알림 시스템</div>
+      </div>
+      <div class="decision-card">
+        <div class="situation">터미널만으로 빠르게 시작</div>
+        <div class="recommendation">→ Claude Squad</div>
+        <div class="reason">5초 설치, 가장 안정적 (0.6% 이슈율)</div>
+      </div>
+      <div class="decision-card">
+        <div class="situation">Docker 격리 + 에이전트 경쟁 실험</div>
+        <div class="recommendation">→ Parallel Code</div>
+        <div class="reason">AI Arena, 프로젝트별 Dockerfile</div>
+      </div>
+      <div class="decision-card">
+        <div class="situation">스펙 기반 크로스 서비스 리팩토링</div>
+        <div class="recommendation">→ Intent</div>
+        <div class="reason">Living spec 전파, Coordinator/Verifier</div>
+      </div>
+      <div class="decision-card">
+        <div class="situation">무료, 가장 쉬운 Mac 시작</div>
+        <div class="recommendation">→ Conductor</div>
+        <div class="reason">무료 + BYO 로그인, 최고 폴리싱</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="observations">
+  <div class="container">
+    <h2>📅 2026년 7월 시장 관찰</h2>
+    <ol class="obs-list">
+      <li><strong>Orca와 Emdash가 1티어 형성</strong> — 크로스플랫폼 + 오픈소스 + 풍부한 기능 + 양호한 안정성.</li>
+      <li><strong>cmux는 커뮤니티 규모와 성능으로 독보적</strong> — 하지만 macOS 전용 + 터미널 한계로 "IDE" 카테고리에서는 4위.</li>
+      <li><strong>Superset은 기능 깊이 최상급</strong> — 하지만 macOS 전용이 치명적. Windows/Linux 지원이 시급.</li>
+      <li><strong>폐쇄 소스 도구(Conductor, Intent)가 최하위</strong> — 오픈소스 자유도에서 근본적 불리.</li>
+      <li><strong>Git worktree가 합의된 격리 원시 도구</strong> — 모든 serious tool이 채택.</li>
+      <li><strong>포트 충돌이 다음 프론티어</strong> — Emdash($EMDASH_PORT)만이 설정 레벨에서 해결.</li>
+      <li><strong>모바일 모니터링이 부상</strong> — Orca(iOS+Android), Parallel Code(QR), Nimbalyst(iOS)가 선도.</li>
+      <li><strong>카테고리 통합 진행 중</strong> — Crystal→Nimbalyst, Bloop→커뮤니티 Vibe Kanban. 2026 H2 추가 M&A와 종료 예상.</li>
+    </ol>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>
+      <a href="https://github.com/pinion05/awesome-agent-ide">⭐ GitHub에서 Star</a> ·
+      <a href="https://github.com/pinion05/awesome-agent-ide/issues">이슈/기여</a> ·
+      CC0-1.0 Public Domain
+    </p>
+    <p style="margin-top:8px;">Last updated: July 2026 · Maintained by <a href="https://github.com/pinion05">pinion05</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
