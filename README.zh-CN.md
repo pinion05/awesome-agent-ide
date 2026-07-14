@@ -43,13 +43,13 @@
 | 排名 | 工具 | 分数 | 平台 | 许可证 | Stars | 一句话 |
 |:----:|------|:-----:|----------|---------|:-----:|-----------|
 | 🥇 | [**Orca**](https://github.com/stablyai/orca) | **8.6** | macOS·Win·Linux·📱 | MIT | 18.3K | 全跨平台 + 移动端，Design Mode，每日发布 |
-| 🥈 | [**Emdash**](https://github.com/generalaction/emdash) | **8.3** | macOS·Win·Linux | Apache-2.0 | 5.1K | 端口注入，8 个工单集成，28+ 代理 |
+| 🥈 | [**Emdash**](https://github.com/generalaction/emdash) | **8.3** | macOS·Win·Linux | Apache-2.0 | 5.1K | 端口注入，12个工单集成，34 代理 |
 | 🥉 | [**Superset**](https://github.com/superset-sh/superset) | **7.5** | macOS | Other | 12.4K | CLI + SDK + MCP，自动化，最广代理支持 |
-| 4 | [**cmux**](https://github.com/manaflow-ai/cmux) | **7.0** | macOS | GPL | 24.4K | 原生 Swift 性能，最大社区，终端优先 |
+| 4 | [**cmux**](https://github.com/manaflow-ai/cmux) | **7.0** | macOS | Other | 24.4K | 原生 Swift 性能，最大社区，终端优先 |
 | 5 | [**Parallel Code**](https://github.com/johannesjo/parallel-code) | **6.7** | macOS·Linux | MIT | 0.8K | Docker 沙箱，AI Arena，覆盖率雷达 |
 | 6 | [**Claude Squad**](https://github.com/smtg-ai/claude-squad) | **6.5** | macOS·Linux | AGPL-3.0 | 8.1K | 最佳稳定性（0.6%），最快设置 |
 | 7 | [**Vibe Kanban**](https://github.com/BloopAI/vibe-kanban) | **6.3** | Web | Apache-2.0 | — | 看板 + MCP 自动分解（社区维护） |
-| 8 | [**Nimbalyst**](https://nimbalyst.com/) | **6.2** | 跨平台·📱 | — | — | Worktree 一等公民，可视化编辑，iOS 伴侣 |
+| 8 | [**Nimbalyst**](https://nimbalyst.com/) | **6.2** | 跨平台·📱 | MIT | — | Worktree 一等公民，可视化编辑，iOS 伴侣 |
 | 9 | [**Intent**](https://www.intentapp.dev/) | **6.1** | macOS | 闭源 | — | 规格驱动协调，Coordinator/Verifier 代理 |
 | 10 | [**Conductor**](https://www.conductor.build/) | **5.7** | macOS | 闭源 | — | Mac 最佳打磨，免费，自带登录 |
 
@@ -127,13 +127,13 @@
 | **语言** | TypeScript (Electron) |
 | **许可证** | Apache-2.0 |
 | **平台** | macOS · Windows · Linux |
-| **网站** | [emdash.sh](https://emdash.sh/) |
+| **网站** | [emdash.ai](https://emdash.ai/) |
 | **支持** | YC W26 |
 
 **✅ 优点**
-- **最广工单集成** — Linear、GitHub、Jira、GitLab、Asana、Monday.com、Forgejo、Plain（8 个平台）
+- **最广工单集成** — Linear、GitHub、Jira、GitLab、Asana、Monday.com、Trello、Plane、Forgejo、Featurebase、Plain、Notion（12 个平台）
 - **`$EMDASH_PORT` 注入** — 在配置层面解决端口冲突问题，几乎没有其他工具做到
-- **最广代理支持** — 自动检测 28+ CLI 提供商（Claude Code、Codex、Cursor、OpenCode、Amp、Devin、Qwen Code、Droid、Copilot 等）
+- **最广代理支持** — 自动检测 34 CLI 提供商（Claude Code、Codex、Cursor、OpenCode、Amp、Devin、Qwen Code、Droid、Copilot 等）
 - **SSH/SFTP 远程项目** — 在远程代码库上运行相同的并行工作流，OS 钥匙串认证
 - **本地优先 + 隐私** — SQLite 本地存储，不向 Emdash 服务器发送代码/聊天
 - 跨平台 + Apache-2.0 — 最宽松的许可证组合
@@ -186,7 +186,7 @@
 | **GitHub** | [manaflow-ai/cmux](https://github.com/manaflow-ai/cmux) |
 | **Stars / Forks / Issues** | 24,412 / 1,970 / 3,446 (14.1%) |
 | **语言** | Swift (原生 macOS) |
-| **许可证** | GPL |
+| **许可证** | Other (GPL-3.0 + 商业双许可) |
 | **平台** | macOS |
 | **网站** | [cmux.com](https://cmux.com/) |
 
@@ -274,7 +274,7 @@
 | | |
 |---|---|
 | **GitHub** | [BloopAI/vibe-kanban](https://github.com/BloopAI/vibe-kanban) |
-| **语言** | TypeScript (Web 应用) |
+| **语言** | Rust (Web 应用) |
 | **许可证** | Apache-2.0 |
 | **平台** | Web (跨平台) |
 | **状态** | 社区维护（Bloop 于 2026 年 4 月关闭） |
@@ -300,7 +300,7 @@
 | | |
 |---|---|
 | **网站** | [nimbalyst.com](https://nimbalyst.com/) |
-| **平台** | 跨平台桌面 + iOS |
+| **平台** | 跨平台桌面 + iOS + Android |
 | **前身** | Crystal（2026 年 2 月废弃） |
 
 **✅ 优点**
@@ -312,7 +312,7 @@
 **❌ 缺点**
 - 最年轻的项目（2026 年 2 月从 Crystal 重命名）
 - 社区、文档和声誉数据有限
-- 供应商主导，许可证不明确
+- 供应商主导，MIT 许可证
 - 代理支持窄（Claude Code、Codex）
 
 > **推荐：** 需要可视化编辑和 worktree 优先会话管理的开发者。建议 6 个月后项目成熟时重新评估。
@@ -326,7 +326,7 @@
 | **网站** | [intentapp.dev](https://www.intentapp.dev/) |
 | **平台** | macOS（Windows 候补名单，Linux 未公布） |
 | **状态** | 公开测试版 |
-| **定价** | Augment 积分（$0 试用 / $20–$60/月） |
+| **定价** | Augment 积分（$0 试用 / $20–$200/月; BYOA 免费） |
 
 **✅ 优点**
 - **规格驱动协调** — 活规格是每个代理的唯一真实来源。编辑一次规格，更新传播到所有活跃代理
@@ -375,7 +375,7 @@
 | 场景 | 推荐工具 | 原因 |
 |----------------|-------------------|-----|
 | 跨平台团队，需要移动监控 | **Orca** | 唯一支持 3 OS + iOS/Android 的工具 |
-| 企业，多个工单系统 | **Emdash** | 8 个工单平台 + 端口注入 + 隐私 |
+| 企业，多个工单系统 | **Emdash** | 12 个工单平台 + 端口注入 + 隐私 |
 | macOS + 可编程自动化 | **Superset** | CLI + SDK + MCP，自动化 |
 | macOS + 原生性能 + 终端优先 | **cmux** | Swift/AppKit，GPU 渲染，通知系统 |
 | 仅终端，最快启动 | **Claude Squad** | 5 秒设置，最佳稳定性 |
@@ -390,7 +390,7 @@
 | 工具 | Worktree | Diff 审查 | Remote/SSH | 移动端 | 浏览器 | CLI/SDK/MCP | 自动化 | 工单集成 |
 |------|:--------:|:-----------:|:----------:|:------:|:-------:|:-----------:|:-----------:|:-----------------:|
 | **Orca** | ✅ | ✅ | ✅ | ✅ iOS+Android | ✅ Design Mode | ✅ CLI | ❌ | GitHub·Linear |
-| **Emdash** | ✅ | ✅ | ✅ SSH/SFTP | ❌ | ❌ | ❌ | ❌ | 8 个平台 |
+| **Emdash** | ✅ | ✅ | ✅ SSH/SFTP | ❌ | ❌ | ❌ | ❌ | 12 个平台 |
 | **Superset** | ✅ | ✅ | ✅ | 🔄 iOS 即将 | ✅ | ✅ CLI+SDK+MCP | ✅ | Slack·Linear |
 | **cmux** | ❌ | ❌ | ✅ | ❌ | ✅ | ✅ CLI+Socket | ❌ | ❌ |
 | **Parallel Code** | ✅ | ✅ | ❌ | ✅ QR | ❌ | ❌ | ❌ | ❌ |

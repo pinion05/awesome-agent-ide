@@ -43,13 +43,13 @@ The defining characteristics:
 | Rank | Tool | Score | Platform | License | Stars | One-Liner |
 |:----:|------|:-----:|----------|---------|:-----:|-----------|
 | 🥇 | [**Orca**](https://github.com/stablyai/orca) | **8.6** | macOS·Win·Linux·📱 | MIT | 18.3K | Full cross-platform + mobile, Design Mode, daily releases |
-| 🥈 | [**Emdash**](https://github.com/generalaction/emdash) | **8.3** | macOS·Win·Linux | Apache-2.0 | 5.1K | Port injection, 8 ticket integrations, 28+ agents |
+| 🥈 | [**Emdash**](https://github.com/generalaction/emdash) | **8.3** | macOS·Win·Linux | Apache-2.0 | 5.1K | Port injection, 12 ticket integrations, 34 agents |
 | 🥉 | [**Superset**](https://github.com/superset-sh/superset) | **7.5** | macOS | Other | 12.4K | CLI + SDK + MCP, automations, broadest agent support |
-| 4 | [**cmux**](https://github.com/manaflow-ai/cmux) | **7.0** | macOS | GPL | 24.4K | Native Swift performance, largest community, terminal-first |
+| 4 | [**cmux**](https://github.com/manaflow-ai/cmux) | **7.0** | macOS | Other | 24.4K | Native Swift performance, largest community, terminal-first |
 | 5 | [**Parallel Code**](https://github.com/johannesjo/parallel-code) | **6.7** | macOS·Linux | MIT | 0.8K | Docker sandboxing, AI Arena, coverage radar |
 | 6 | [**Claude Squad**](https://github.com/smtg-ai/claude-squad) | **6.5** | macOS·Linux | AGPL-3.0 | 8.1K | Best stability (0.6% issue ratio), fastest setup |
 | 7 | [**Vibe Kanban**](https://github.com/BloopAI/vibe-kanban) | **6.3** | Web | Apache-2.0 | — | Kanban + MCP auto-decomposition (community-maintained) |
-| 8 | [**Nimbalyst**](https://nimbalyst.com/) | **6.2** | Cross-platform·📱 | — | — | Worktree-first sessions, visual editing, iOS companion |
+| 8 | [**Nimbalyst**](https://nimbalyst.com/) | **6.2** | Cross-platform·📱 | MIT | — | Worktree-first sessions, visual editing, iOS companion |
 | 9 | [**Intent**](https://www.intentapp.dev/) | **6.1** | macOS | Closed | — | Spec-driven coordination, Coordinator/Verifier agents |
 | 10 | [**Conductor**](https://www.conductor.build/) | **5.7** | macOS | Closed | — | Best Mac polish, free, BYO login |
 
@@ -127,13 +127,13 @@ Each tool is scored on **7 dimensions** (1–10 scale), weighted to produce a co
 | **Language** | TypeScript (Electron) |
 | **License** | Apache-2.0 |
 | **Platform** | macOS · Windows · Linux |
-| **Website** | [emdash.sh](https://emdash.sh/) |
+| **Website** | [emdash.ai](https://emdash.ai/) |
 | **Backing** | YC W26 |
 
 **✅ Strengths**
-- **Broadest ticket integration** — Linear, GitHub, Jira, GitLab, Asana, Monday.com, Forgejo, Plain (8 platforms)
+- **Broadest ticket integration** — Linear, GitHub, Jira, GitLab, Asana, Monday.com, Trello, Plane, Forgejo, Featurebase, Plain, Notion (12 platforms)
 - **`$EMDASH_PORT` injection** — Solves the port-collision problem at the config level, which almost no other tool handles
-- **Broadest agent support** — 28+ CLI providers auto-detected (Claude Code, Codex, Cursor, OpenCode, Amp, Devin, Qwen Code, Droid, Copilot, etc.)
+- **Broadest agent support** — 34 CLI providers auto-detected (Claude Code, Codex, Cursor, OpenCode, Amp, Devin, Qwen Code, Droid, Copilot, etc.)
 - **SSH/SFTP remote projects** — Same parallel workflow on remote codebases, OS keychain auth
 - **Local-first + privacy** — SQLite local storage, no code/chat sent to Emdash servers
 - Cross-platform + Apache-2.0 — most permissive license combination
@@ -186,7 +186,7 @@ Each tool is scored on **7 dimensions** (1–10 scale), weighted to produce a co
 | **GitHub** | [manaflow-ai/cmux](https://github.com/manaflow-ai/cmux) |
 | **Stars / Forks / Issues** | 24,412 / 1,970 / 3,446 (14.1%) |
 | **Language** | Swift (native macOS) |
-| **License** | GPL |
+| **License** | Other (GPL-3.0 + commercial dual) |
 | **Platform** | macOS |
 | **Website** | [cmux.com](https://cmux.com/) |
 
@@ -274,7 +274,7 @@ Each tool is scored on **7 dimensions** (1–10 scale), weighted to produce a co
 | | |
 |---|---|
 | **GitHub** | [BloopAI/vibe-kanban](https://github.com/BloopAI/vibe-kanban) |
-| **Language** | TypeScript (Web app) |
+| **Language** | Rust (Web app) |
 | **License** | Apache-2.0 |
 | **Platform** | Web (cross-platform) |
 | **Status** | Community-maintained (Bloop shut down April 2026) |
@@ -300,7 +300,7 @@ Each tool is scored on **7 dimensions** (1–10 scale), weighted to produce a co
 | | |
 |---|---|
 | **Website** | [nimbalyst.com](https://nimbalyst.com/) |
-| **Platform** | Cross-platform desktop + iOS |
+| **Platform** | Cross-platform desktop + iOS + Android |
 | **Predecessor** | Crystal (deprecated Feb 2026) |
 
 **✅ Strengths**
@@ -312,7 +312,7 @@ Each tool is scored on **7 dimensions** (1–10 scale), weighted to produce a co
 **❌ Weaknesses**
 - Youngest project (rebranded from Crystal in Feb 2026)
 - Limited community, documentation, and reputation data
-- Vendor-led, license unclear
+- Vendor-led, MIT licensed
 - Narrow agent support (Claude Code, Codex)
 
 > **Best for:** Developers who want worktree-first session management with visual editing. Re-evaluate in 6 months as the project matures.
@@ -326,7 +326,7 @@ Each tool is scored on **7 dimensions** (1–10 scale), weighted to produce a co
 | **Website** | [intentapp.dev](https://www.intentapp.dev/) |
 | **Platform** | macOS (Windows waitlist, Linux not announced) |
 | **Status** | Public beta |
-| **Pricing** | Augment credits ($0 trial / $20–$60/mo) |
+| **Pricing** | Augment credits ($0 trial / $20–$200/mo; BYOA free) |
 
 **✅ Strengths**
 - **Spec-driven coordination** — A living spec is the single source of truth for every agent. Edit the spec once; updates propagate to all active agents.
@@ -375,7 +375,7 @@ Each tool is scored on **7 dimensions** (1–10 scale), weighted to produce a co
 | Your Situation | Recommended Tool | Why |
 |----------------|-------------------|-----|
 | Cross-platform team, need mobile monitoring | **Orca** | Only tool with 3 OS + iOS/Android |
-| Enterprise, multiple ticket systems | **Emdash** | 8 ticket platforms + port injection + privacy |
+| Enterprise, multiple ticket systems | **Emdash** | 12 ticket platforms + port injection + privacy |
 | macOS + programmable automation | **Superset** | CLI + SDK + MCP, Automations |
 | macOS + native performance + terminal-first | **cmux** | Swift/AppKit, GPU rendering, notifications |
 | Terminal-only, fastest possible start | **Claude Squad** | 5-second setup, best stability |
@@ -390,7 +390,7 @@ Each tool is scored on **7 dimensions** (1–10 scale), weighted to produce a co
 | Tool | Worktree | Diff Review | Remote/SSH | Mobile | Browser | CLI/SDK/MCP | Automations | Ticket Integration |
 |------|:--------:|:-----------:|:----------:|:------:|:-------:|:-----------:|:-----------:|:-----------------:|
 | **Orca** | ✅ | ✅ | ✅ | ✅ iOS+Android | ✅ Design Mode | ✅ CLI | ❌ | GitHub·Linear |
-| **Emdash** | ✅ | ✅ | ✅ SSH/SFTP | ❌ | ❌ | ❌ | ❌ | 8 platforms |
+| **Emdash** | ✅ | ✅ | ✅ SSH/SFTP | ❌ | ❌ | ❌ | ❌ | 12 platforms |
 | **Superset** | ✅ | ✅ | ✅ | 🔄 iOS soon | ✅ | ✅ CLI+SDK+MCP | ✅ | Slack·Linear |
 | **cmux** | ❌ | ❌ | ✅ | ❌ | ✅ | ✅ CLI+Socket | ❌ | ❌ |
 | **Parallel Code** | ✅ | ✅ | ❌ | ✅ QR | ❌ | ❌ | ❌ | ❌ |

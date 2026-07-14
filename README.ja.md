@@ -43,13 +43,13 @@
 | 順位 | ツール | スコア | プラットフォーム | ライセンス | Stars | 一言 |
 |:----:|------|:-----:|----------|---------|:-----:|-----------|
 | 🥇 | [**Orca**](https://github.com/stablyai/orca) | **8.6** | macOS·Win·Linux·📱 | MIT | 18.3K | フルクロスプラットフォーム＋モバイル、Design Mode、毎日リリース |
-| 🥈 | [**Emdash**](https://github.com/generalaction/emdash) | **8.3** | macOS·Win·Linux | Apache-2.0 | 5.1K | ポートインジェクション、8チケット統合、28+エージェント |
+| 🥈 | [**Emdash**](https://github.com/generalaction/emdash) | **8.3** | macOS·Win·Linux | Apache-2.0 | 5.1K | ポートインジェクション、12チケット統合、34エージェント |
 | 🥉 | [**Superset**](https://github.com/superset-sh/superset) | **7.5** | macOS | Other | 12.4K | CLI + SDK + MCP、自動化、最も広いエージェントサポート |
-| 4 | [**cmux**](https://github.com/manaflow-ai/cmux) | **7.0** | macOS | GPL | 24.4K | ネイティブSwift性能、最大コミュニティ、ターミナルファースト |
+| 4 | [**cmux**](https://github.com/manaflow-ai/cmux) | **7.0** | macOS | Other | 24.4K | ネイティブSwift性能、最大コミュニティ、ターミナルファースト |
 | 5 | [**Parallel Code**](https://github.com/johannesjo/parallel-code) | **6.7** | macOS·Linux | MIT | 0.8K | Dockerサンドボックス、AI Arena、カバレッジレーダー |
 | 6 | [**Claude Squad**](https://github.com/smtg-ai/claude-squad) | **6.5** | macOS·Linux | AGPL-3.0 | 8.1K | 最高の安定性（0.6%）、最速セットアップ |
 | 7 | [**Vibe Kanban**](https://github.com/BloopAI/vibe-kanban) | **6.3** | Web | Apache-2.0 | — | カンバン＋MCP自動分解（コミュニティ保守） |
-| 8 | [**Nimbalyst**](https://nimbalyst.com/) | **6.2** | クロスプラットフォーム·📱 | — | — | Worktreeファーストクラス、ビジュアル編集、iOSコンパニオン |
+| 8 | [**Nimbalyst**](https://nimbalyst.com/) | **6.2** | クロスプラットフォーム·📱 | MIT | — | Worktreeファーストクラス、ビジュアル編集、iOSコンパニオン |
 | 9 | [**Intent**](https://www.intentapp.dev/) | **6.1** | macOS | クローズド | — | スペック駆動調整、Coordinator/Verifierエージェント |
 | 10 | [**Conductor**](https://www.conductor.build/) | **5.7** | macOS | クローズド | — | Mac最高の洗練度、無料、BYOログイン |
 
@@ -127,13 +127,13 @@
 | **言語** | TypeScript (Electron) |
 | **ライセンス** | Apache-2.0 |
 | **プラットフォーム** | macOS · Windows · Linux |
-| **ウェブサイト** | [emdash.sh](https://emdash.sh/) |
+| **ウェブサイト** | [emdash.ai](https://emdash.ai/) |
 | **バッキング** | YC W26 |
 
 **✅ 長所**
-- **最も広いチケット統合** — Linear、GitHub、Jira、GitLab、Asana、Monday.com、Forgejo、Plain（8プラットフォーム）
+- **最も広いチケット統合** — Linear、GitHub、Jira、GitLab、Asana、Monday.com、Trello、Plane、Forgejo、Featurebase、Plain、Notion（12プラットフォーム）
 - **`$EMDASH_PORT`インジェクション** — ポート衝突問題を設定レベルで解決。他のツールが見落とす部分
-- **最も広いエージェントサポート** — 28+ CLIプロバイダーを自動検出（Claude Code、Codex、Cursor、OpenCode、Amp、Devin、Qwen Code、Droid、Copilot等）
+- **最も広いエージェントサポート** — 34 CLIプロバイダーを自動検出（Claude Code、Codex、Cursor、OpenCode、Amp、Devin、Qwen Code、Droid、Copilot等）
 - **SSH/SFTPリモートプロジェクト** — リモートコードベースで同じ並列ワークフロー、OSキーチェーン認証
 - **Local-first + プライバシー** — SQLiteローカル保存、コード/チャットをEmdashサーバーに送信しない
 - クロスプラットフォーム＋Apache-2.0 — 最も寛容なライセンス組み合わせ
@@ -186,7 +186,7 @@
 | **GitHub** | [manaflow-ai/cmux](https://github.com/manaflow-ai/cmux) |
 | **Stars / Forks / Issues** | 24,412 / 1,970 / 3,446 (14.1%) |
 | **言語** | Swift (ネイティブmacOS) |
-| **ライセンス** | GPL |
+| **ライセンス** | Other (GPL-3.0 + 商用デュアル) |
 | **プラットフォーム** | macOS |
 | **ウェブサイト** | [cmux.com](https://cmux.com/) |
 
@@ -274,7 +274,7 @@
 | | |
 |---|---|
 | **GitHub** | [BloopAI/vibe-kanban](https://github.com/BloopAI/vibe-kanban) |
-| **言語** | TypeScript (ウェブアプリ) |
+| **言語** | Rust (ウェブアプリ) |
 | **ライセンス** | Apache-2.0 |
 | **プラットフォーム** | Web (クロスプラットフォーム) |
 | **状態** | コミュニティ保守（Bloopは2026年4月にサービス終了） |
@@ -300,7 +300,7 @@
 | | |
 |---|---|
 | **ウェブサイト** | [nimbalyst.com](https://nimbalyst.com/) |
-| **プラットフォーム** | クロスプラットフォームデスクトップ＋iOS |
+| **プラットフォーム** | クロスプラットフォームデスクトップ＋iOS＋Android |
 | **前身** | Crystal（2026年2月非推奨） |
 
 **✅ 長所**
@@ -312,7 +312,7 @@
 **❌ 短所**
 - 最も若いプロジェクト（2026年2月Crystalからリブランディング）
 - コミュニティ・ドキュメント・評価データ不足
-- ベンダー主導、ライセンス不明確
+- ベンダー主導、MITライセンス
 - エージェントサポートが狭い（Claude Code、Codex）
 
 > **おすすめ:** ビジュアル編集付きworktreeファーストセッション管理を求める開発者。プロジェクトが成熟する6ヶ月後に再評価推奨。
@@ -326,7 +326,7 @@
 | **ウェブサイト** | [intentapp.dev](https://www.intentapp.dev/) |
 | **プラットフォーム** | macOS（Windowsウェイティングリスト、Linux未発表） |
 | **状態** | パブリックベータ |
-| **価格** | Augmentクレジット（$0トライアル / $20〜$60/月） |
+| **価格** | Augmentクレジット（$0トライアル / $20〜$200/月; BYOA無料） |
 
 **✅ 長所**
 - **スペック駆動調整** — Living specが全エージェントの唯一の真実の情報源。スペックを一度編集すると全アクティブエージェントに伝播
@@ -375,7 +375,7 @@
 | 状況 | 推奨ツール | 理由 |
 |----------------|-------------------|-----|
 | クロスプラットフォームチーム、モバイル監視必要 | **Orca** | 3 OS＋iOS/Android対応の唯一のツール |
-| エンタープライズ、複数チケットシステム | **Emdash** | 8チケットプラットフォーム＋ポートインジェクション＋プライバシー |
+| エンタープライズ、複数チケットシステム | **Emdash** | 12チケットプラットフォーム＋ポートインジェクション＋プライバシー |
 | macOS＋プログラマブル自動化 | **Superset** | CLI + SDK + MCP、Automations |
 | macOS＋ネイティブ性能＋ターミナルファースト | **cmux** | Swift/AppKit、GPUレンダリング、通知システム |
 | ターミナルのみ、最速スタート | **Claude Squad** | 5秒セットアップ、最高安定性 |
@@ -390,7 +390,7 @@
 | ツール | Worktree | Diffレビュー | Remote/SSH | モバイル | ブラウザ | CLI/SDK/MCP | 自動化 | チケット統合 |
 |------|:--------:|:-----------:|:----------:|:------:|:-------:|:-----------:|:-----------:|:-----------------:|
 | **Orca** | ✅ | ✅ | ✅ | ✅ iOS+Android | ✅ Design Mode | ✅ CLI | ❌ | GitHub·Linear |
-| **Emdash** | ✅ | ✅ | ✅ SSH/SFTP | ❌ | ❌ | ❌ | ❌ | 8プラットフォーム |
+| **Emdash** | ✅ | ✅ | ✅ SSH/SFTP | ❌ | ❌ | ❌ | ❌ | 12プラットフォーム |
 | **Superset** | ✅ | ✅ | ✅ | 🔄 iOS近日 | ✅ | ✅ CLI+SDK+MCP | ✅ | Slack·Linear |
 | **cmux** | ❌ | ❌ | ✅ | ❌ | ✅ | ✅ CLI+Socket | ❌ | ❌ |
 | **Parallel Code** | ✅ | ✅ | ❌ | ✅ QR | ❌ | ❌ | ❌ | ❌ |
