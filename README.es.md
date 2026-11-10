@@ -404,7 +404,7 @@ Cada herramienta se evalúa en **7 dimensiones** (escala 1–10), ponderadas par
 
 ## 🌐 Ecosistema Más Amplio
 
-Estos **no** son IDEs agent-native, pero han absorbido funciones de worktree/agentes paralelos y vale la pena conocerlos:
+Estos **no** son IDEs agent-native, pero coordinan agentes CLI paralelos o han absorbido funciones de worktree y vale la pena conocerlos:
 
 | Herramienta | Categoría | Función Agent-Native |
 |------|----------|---------------------|
@@ -415,6 +415,7 @@ Estos **no** son IDEs agent-native, pero han absorbido funciones de worktree/age
 | [Roo Code](https://roocode.com/) | Extensión VS Code | Sistema de agentes multi-persona (Coder, Architect, Debugger) |
 | [Claude Code](https://claude.com/product/claude-code) | Agente terminal | `isolation: worktree` integrado en subagent frontmatter |
 | [Aider](https://aider.chat/) | Agente terminal | Agnóstico de editor, pair programming CLI nativo de Git |
+| [Orkas](https://github.com/Orkas-AI/Orkas) | Orquestador de escritorio | App local-first para macOS/Windows; su Commander coordina especialistas integrados + agentes CLI Claude Code, Codex y OpenCode (MIT; sin aislamiento de worktree) |
 
 ---
 

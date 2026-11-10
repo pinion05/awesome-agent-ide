@@ -404,7 +404,7 @@
 
 ## 🌐 より広いエコシステム
 
-これらはagent-native IDEではありませんが、worktree/並列エージェント機能を吸収しており、知っておく価値があります：
+これらはagent-native IDEではありませんが、並列CLIエージェントの調整やworktree機能を持ち、知っておく価値があります：
 
 | ツール | カテゴリー | Agent-Native機能 |
 |------|----------|---------------------|
@@ -415,6 +415,7 @@
 | [Roo Code](https://roocode.com/) | VS Code拡張 | マルチペルソナエージェントシステム（Coder、Architect、Debugger） |
 | [Claude Code](https://claude.com/product/claude-code) | ターミナルエージェント | サブエージェントfrontmatterの`isolation: worktree`組み込み |
 | [Aider](https://aider.chat/) | ターミナルエージェント | エディタ非依存、GitネイティブCLIペアプログラミング |
+| [Orkas](https://github.com/Orkas-AI/Orkas) | デスクトップオーケストレーター | ローカルファーストのmacOS/Windowsアプリ。Commanderが内蔵スペシャリスト＋Claude Code・Codex・OpenCode CLIエージェントを調整（MIT、worktree分離なし） |
 
 ---
 

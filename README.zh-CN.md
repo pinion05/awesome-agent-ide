@@ -404,7 +404,7 @@
 
 ## 🌐 更广泛的生态系统
 
-这些**不是** agent-native IDE，但已吸收 worktree/并行代理功能，值得了解：
+这些**不是** agent-native IDE，但可协调并行 CLI 代理或已吸收 worktree 功能，值得了解：
 
 | 工具 | 类别 | Agent-Native 功能 |
 |------|----------|---------------------|
@@ -415,6 +415,7 @@
 | [Roo Code](https://roocode.com/) | VS Code 扩展 | 多角色代理系统（Coder、Architect、Debugger） |
 | [Claude Code](https://claude.com/product/claude-code) | 终端代理 | 子代理 frontmatter 内置 `isolation: worktree` |
 | [Aider](https://aider.chat/) | 终端代理 | 编辑器无关，Git 原生 CLI 结对编程 |
+| [Orkas](https://github.com/Orkas-AI/Orkas) | 桌面编排器 | 本地优先的 macOS/Windows 应用；Commander 协调内置专家代理与 Claude Code、Codex、OpenCode CLI 代理（MIT，无 worktree 隔离） |
 
 ---
 

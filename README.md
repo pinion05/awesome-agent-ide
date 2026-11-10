@@ -404,7 +404,7 @@ Each tool is scored on **7 dimensions** (1–10 scale), weighted to produce a co
 
 ## 🌐 Broader Ecosystem
 
-These are **not** agent-native IDEs, but they've absorbed worktree/parallel-agent features and are worth knowing:
+These are **not** agent-native IDEs, but they coordinate parallel CLI agents or have absorbed worktree features and are worth knowing:
 
 | Tool | Category | Agent-Native Feature |
 |------|----------|---------------------|
@@ -415,6 +415,7 @@ These are **not** agent-native IDEs, but they've absorbed worktree/parallel-agen
 | [Roo Code](https://roocode.com/) | VS Code Extension | Multi-persona agent system (Coder, Architect, Debugger) |
 | [Claude Code](https://claude.com/product/claude-code) | Terminal Agent | Built-in `isolation: worktree` in subagent frontmatter |
 | [Aider](https://aider.chat/) | Terminal Agent | Editor-agnostic, Git-native CLI pair programming |
+| [Orkas](https://github.com/Orkas-AI/Orkas) | Desktop Orchestrator | Local-first macOS/Windows app; its Commander coordinates built-in specialist agents + Claude Code, Codex and OpenCode CLI agents (MIT; no worktree isolation) |
 
 ---
 
