@@ -404,7 +404,7 @@
 
 ## 🌐 더 넓은 생태계
 
-이들은 agent-native IDE는 아니지만, worktree/병렬 에이전트 기능을 흡수하여 알아둘 가치가 있습니다:
+이들은 agent-native IDE는 아니지만, 병렬 CLI 에이전트를 조정하거나 worktree 기능을 흡수하여 알아둘 가치가 있습니다:
 
 | 도구 | 카테고리 | Agent-Native 기능 |
 |------|----------|---------------------|
@@ -415,6 +415,7 @@
 | [Roo Code](https://roocode.com/) | VS Code 확장 | 멀티 페르소나 에이전트 시스템 (Coder, Architect, Debugger) |
 | [Claude Code](https://claude.com/product/claude-code) | 터미널 에이전트 | 서브에이전트 frontmatter의 `isolation: worktree` 내장 |
 | [Aider](https://aider.chat/) | 터미널 에이전트 | 에디터 독립적, Git 네이티브 CLI 페어 프로그래밍 |
+| [Orkas](https://github.com/Orkas-AI/Orkas) | 데스크톱 오케스트레이터 | 로컬 우선 macOS/Windows 앱; Commander가 내장 전문가 에이전트와 Claude Code·Codex·OpenCode CLI 에이전트를 조정 (MIT, worktree 격리 없음) |
 
 ---
 
